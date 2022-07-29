@@ -47,9 +47,40 @@
             border-radius: 0px;
         }
 
+        .btn-header {
+            background: rgb(25, 135, 84);
+            border-radius: 2px;
+            border: 1px solid yellow;
+            color: yellow;
+            padding: 2px 20px 2px 20px;
+        }
+
+        .btn-header:hover {
+            border: 1px solid rgb(129, 129, 56);
+            color: rgb(129, 129, 56);;
+        }
+
         .fda-icons img {
             width: 20em;
             margin-bottom: 150px;
+        }
+
+        .header-offer {
+            height: 50px;
+        }
+
+        .header-time {
+            font-size: 0.7em;
+        }
+
+        .header-btn {
+            margin-left: 20px;
+            margin-top: 9px;
+        }
+
+        .header-text {
+            margin-top: 5px;
+            font-size: 14px !important;
         }
 
         /* Extra small devices (phones, 600px and down) */
@@ -77,7 +108,21 @@
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <nav class="header-offer fixed-top bg-success">
+            <div class="d-flex justify-content-center">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <span class="text-light header-text">BUY 6 BOTTLES AND SAVE $300</span>
+                    <span id="header-minutes" class="text-light header-time"></span>
+                </div>
+                <div class="header-btn">
+                    <a href="https://c8464aynja-9pk6x36y5xdnz0h.hop.clickbank.net/?cbpage=tsl&tid=btnActNow#start-now">
+                        <button type="button" class="btn-header">Act Now</button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light mt-5">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">VitalFlow</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -104,7 +149,6 @@
         <div class="row text-center">
             <div class="col-12">
                 <h2 class="display-5 text-primary lead">VitalFlow™ Store</h2>
-                <h4 class="text-danger mb-5">ONLY TODAY $300 OFF</h4>
             </div>
         </div>
 
@@ -334,6 +378,7 @@
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
                 // Output the result in an element with id="demo"
+                document.getElementById("header-minutes").innerHTML = `${minutes} minutes - ${seconds} seconds`;
                 document.getElementById("minutes").innerHTML = minutes;
                 document.getElementById("seconds").innerHTML = seconds;
 
